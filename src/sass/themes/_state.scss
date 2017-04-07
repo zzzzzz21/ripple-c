@@ -1,0 +1,71 @@
+@charset "UTF-8";
+// ===================================================================
+//	File:	themes/_state.scss
+//	Date:	2015-05-02(+09:00)
+//	Note:	
+// ===================================================================
+// PC/SP
+// -------------------------------------------------------------------
+.is-sp {
+	display: none;
+	//	[media queries SP]
+	// ----------------------------------------
+	@include media(sp) {
+		display: block!important;
+	}
+}
+.is-pc {
+	//	[media queries SP]
+	// ----------------------------------------
+	@include media(sp) {
+		display: none!important;
+	}
+}
+
+.data-link-sp {
+	//	[media queries PC]
+	// ----------------------------------------
+	@include media(pc) {
+		cursor: default;
+	}
+}
+
+// 必須項目
+// -------------------------------------------------------------------
+.is-required {
+	color: $color_required!important;
+}
+
+// JS
+// -------------------------------------------------------------------
+.is-hide {
+  display: none !important;
+}
+
+.is-show {
+  display: block !important;
+}
+
+.is-static {
+  position: static !important;
+}
+
+.is-fixed {
+  position: fixed !important;
+}
+
+.is-absolute {
+  position: absolute !important;
+}
+
+.is-visible {
+  visibility: visible !important;
+}
+
+.is-hidden {
+  visibility: hidden !important;
+}
+
+.is-overflow-hidden {
+  overflow: hidden !important;
+}

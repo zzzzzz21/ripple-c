@@ -1,0 +1,107 @@
+@charset "utf-8";
+// ===================================================================
+//  File:	pages/_faq.scss
+//  Date:	2017-02-24(UTC+9)
+//  Note:	
+// ===================================================================
+// -------------------------------------------------------------------
+// 	.page-head
+// -------------------------------------------------------------------
+.xFaq {
+	.page-head {
+		.container {
+			//	[media queries PC]
+			// ----------------------------------------
+			@include media(pc) {
+				width: 810px;
+				margin-right: auto;
+				margin-left: auto;
+				text-align: left;
+			}
+		}
+		.page-title {
+			text-align: left;
+			.sub {
+				margin-top: .6em;
+				@include fontsize(18);
+			}
+		}
+		.leadTxt {
+			text-align: left;
+		}
+		.contact__form__btn {
+			margin-top: 2em;
+			//	[media queries PC]
+			// ----------------------------------------
+			@include media(pc) {
+				margin-top: 4em;
+			}
+		}
+	}
+	.page-body {
+		.container {
+			//	[media queries PC]
+			// ----------------------------------------
+			@include media(pc) {
+				width: 810px;
+				margin-right: auto;
+				margin-left: auto;
+				text-align: left;
+			}
+		}
+	}
+}
+
+
+// -------------------------------------------------------------------
+// 	.faq-unit
+// -------------------------------------------------------------------
+.faq {
+	&-unit {
+		//	[media queries PC]
+		// ----------------------------------------
+		@include media(pc) {
+			width: 810px;
+			margin-right: auto;
+			margin-left: auto;
+			@include fontsize(14);
+			line-height: 1.7;
+		}
+	}
+}
+.faq-list {
+	padding: 2em 0 0;
+	border-top: 1px dotted $base_border_color;
+	&__question {
+		padding: 0 0 1em 2em;
+		&:before {
+			top: 0;
+			left: 0;
+			content: 'Q';
+			color: #66c;
+		}
+	}
+	&__answer {
+		margin-bottom: 2em;
+		padding: 0 0 2em 2em;
+		border-bottom: 1px dotted $base_border_color;
+		&:last-child {
+		}
+		&:before {
+			top: 0;
+			left: 0;
+			content: 'A';
+			color: #f66;
+		}
+	}
+	&__question,
+	&__answer {
+		position: relative;
+		&:before {
+			position: absolute;
+			@include fontsize(24);
+			line-height: 1;
+			font-weight: bold;
+		}
+	}
+}

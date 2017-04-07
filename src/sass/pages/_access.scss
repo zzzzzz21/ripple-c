@@ -1,0 +1,66 @@
+@charset "utf-8";
+// ===================================================================
+//  File:	pages/_access.scss
+//  Date:	2017-02-24(UTC+9)
+//  Note:	
+// ===================================================================
+// -------------------------------------------------------------------
+// 	.access-unit
+// -------------------------------------------------------------------
+.access-unit {
+	@include element(title) {
+		margin-bottom: .8em;
+		@include fontsize(18);
+		font-family: $base_font_family_rounded;
+		letter-spacing: .125em;
+		font-weight: normal;
+		//	[media queries PC]
+		// ----------------------------------------
+		@include media(pc) {
+			@include fontsize(28);
+		}
+	}
+	p {
+		line-height: 2;
+		& + p {
+			margin-top: 1em;
+		}
+	}
+
+	// 	.access-unit__body
+	// -------------------------------------------------
+	@include element(body) {
+		@extend .policy-unit__body;
+		text-align: left;
+		@include element(title) {
+			margin: 0 auto 1.8em;
+			font-family: $base_font_family_rounded;
+			font-weight: normal;
+			color: $color_access;
+			@include fontsize(18);
+			//	[media queries PC]
+			// ----------------------------------------
+			@include media(pc) {
+				@include fontsize(24);
+				margin-bottom: 3em;
+				text-align: center;
+			}
+		}
+		.slick,
+		.slick + .container {
+			margin: $base_padding*6 auto 0;
+			//	[media queries PC]
+			// ----------------------------------------
+			@include media(pc) {
+				margin: $base_padding*8 auto 0;
+			}
+		}
+		.commit {
+			//	[media queries PC]
+			// ----------------------------------------
+			@include media(pc) {
+				line-height: 2.2;
+			}
+		}
+	}
+}

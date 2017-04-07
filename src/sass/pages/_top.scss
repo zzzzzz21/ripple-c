@@ -1,0 +1,286 @@
+@charset "utf-8";
+// ===================================================================
+//  File:	pages/_top.scss
+//  Date:	2017-02-24(UTC+9)
+//  Note:	
+// ===================================================================
+.siteIndex {
+	// -------------------------------------------------------------------
+	// 	.siteTitle
+	// -------------------------------------------------------------------
+	.siteTitle {
+		margin-bottom: $base_padding*6;
+		.siteLogo {
+			text-align: center;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				width: 80%;
+				height: auto;
+				margin-bottom: $base_padding*2;
+			}
+		}
+	}
+	.contents {
+		margin-top: $base_padding*4;
+	}
+	// -------------------------------------------------------------------
+	// 	.menu-panels
+	// -------------------------------------------------------------------
+	.menu-panels {
+		@include clearfix;
+		width: 1280px;
+		margin: 0 auto;
+		@include media(sp) {
+			width: 100%;
+		}
+		.menu-panel {
+			float: left;
+		}
+		.is-wide {
+			box-sizing: border-box;
+			width: 640px;
+			@include clearfix;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				width: 100%;
+			}
+		}
+		.is-square {
+			box-sizing: border-box;
+			width: 320px;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				width: 50%;
+			}
+		}
+		.unit {
+			float: left;
+		}
+		.comment {
+			position: relative;
+			padding: 12px;
+			&:after {
+				display: block;
+				position: absolute;
+				width: 0;
+				height: 0;
+				border: 20px solid transparent;
+				content: '';
+				z-index: 10;
+			}
+			.title {
+				line-height: 1.3;
+			}
+			.main {
+				display: block;
+				@include fontsize(28);
+				letter-spacing: .125em;
+				font-family: $base_font_family_rounded;
+				//	[media queries SP]
+				// ----------------------------------------
+				@include media(sp) {
+					@include fontsize(18);
+				}
+			}
+			.note {
+				font-weight: normal;
+			}
+			p {
+				margin-top: .8em;
+				@include fontsize(16);
+				//	[media queries SP]
+				// ----------------------------------------
+				@include media(sp) {
+					@include fontsize(14);
+				}
+			}
+		}
+		a {
+			color: $base_text_color;
+		}
+		a:hover {
+			opacity: .8;
+		}
+		.is-policy {
+			strong {
+				color: #09f;
+			}
+			//	[media queries PC]
+			// ----------------------------------------
+			@include media(pc) {
+				.comment:after {
+					top: -40px;
+					left: 40%;
+					border-bottom: 20px solid #fff;
+				}
+			}
+		}
+		.is-course {
+			background: $color_course;
+			color: $base_white_color;
+			//	[media queries PC]
+			// ----------------------------------------
+			@include media(pc) {
+				&:after {
+					top: 40%;
+					right: -40px;
+					border-left: 20px solid $color_course;
+				}
+			}
+			a {
+				color: $base_white_color;
+			}
+		}
+		.is-preschool {
+			background: #f90;
+			color: $base_white_color;
+			//	[media queries PC]
+			// ----------------------------------------
+			@include media(pc) {
+				&:after {
+					top: 40%;
+					left: -40px;
+					border-right: 20px solid #f90;
+				}
+			}
+			a {
+				color: $base_white_color;
+			}
+		}
+		.is-movie {
+			strong {
+				color: #c00;
+			}
+			//	[media queries PC]
+			// ----------------------------------------
+			@include media(pc) {
+				.comment:after {
+					top: 40%;
+					right: -40px;
+					border-left: 20px solid $base_white_color;
+				}
+				.is-wide:first-child{ float: right;}
+				.is-wide:last-child { float: left;}
+			}
+		}
+		.is-course2 {
+			background: #2dbc3a;
+			color: $base_white_color;
+			//	[media queries PC]
+			// ----------------------------------------
+			@include media(pc) {
+				&:after {
+					top: 40%;
+					right: -40px;
+					border-left: 20px solid #2dbc3a;
+				}
+			}
+			a {
+				color: $base_white_color;
+			}
+		}
+		.is-course3 {
+			background: #4e30bb;
+			color: $base_white_color;
+			//	[media queries PC]
+			// ----------------------------------------
+			@include media(pc) {
+				&:after {
+					top: 40%;
+					right: -40px;
+					border-left: 20px solid #4e30bb;
+				}
+			}
+			a {
+				color: $base_white_color;
+			}
+		}
+		.is-news {
+			strong {
+				color: #fc0;
+			}
+		}
+		.is-faq {
+			background: #c1c0c0;
+			a p {
+				color: $base_white_color;
+			}
+			strong {
+				color: $color_faq;
+			}
+		}
+		.is-event {
+			strong {
+				color: #3c0;
+			}
+			//	[media queries PC]
+			// ----------------------------------------
+			@include media(pc) {
+				&:after {
+					top: -40px;
+					left: 40%;
+					border-bottom: 20px solid #fff;
+				}
+			}
+		}
+		.is-guide {
+			strong {
+				color: #f69;
+			}
+			//	[media queries PC]
+			// ----------------------------------------
+			@include media(pc) {
+				&:after {
+					top: 40%;
+					right: -40px;
+					border-left: 20px solid #fff;
+				}
+			}
+		}
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+		
+	}
+	// -------------------------------------------------------------------
+	// 	.greetinsg
+	// -------------------------------------------------------------------
+	.greetings {
+		margin-top: $base_padding*8;
+		.container {
+			text-align: center;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				padding: $base_padding*6 $base_padding*2 $base_padding*36;
+				background: url(/koshigaya/img/bg_message_sp.jpg) center bottom no-repeat;
+				background-size: cover;
+			}
+			//	[media queries PC]
+			// ----------------------------------------
+			@include media(pc) {
+				padding: 90px 120px 550px;
+				@include fontsize(16);
+				font-family: $base_font_family_mincho;
+				background: url(/koshigaya/img/bg_message_pc.jpg) center bottom no-repeat;
+			}
+		}
+		.title {
+			@include fontsize(16);
+			margin-bottom: 3em;
+		}
+		.body {
+			p + p {
+				margin-top: 2em;
+			}
+		}
+	}
+}

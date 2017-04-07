@@ -1,0 +1,103 @@
+@charset "UTF-8";
+// ===================================================================
+//	File:	base/_structure.scss
+//	Date:	2017-02-20(+09:00)
+//	Note:	
+// ===================================================================
+html {
+	font-size: 62.5%;	// fontsize 指定は1rem=1px
+	height: 100%;
+	background: $base_bg_color;
+}
+
+body {
+	@include fontsize($sp_base_font_size);
+	line-height: $sp_base_line_height;
+	//	[media queries PC]
+	// ----------------------------------------
+	@include media(pc) {
+		@include fontsize($base_font_size);
+		line-height: $base_line_height;
+	}
+	background: $base_bg_color;
+	color: $base_text_color;
+	font-family: $base_font_family;
+}
+html, body {
+	height: 100%;
+}
+
+body {
+	width: 100%;
+	position: relative;
+	min-height: 100%;
+}
+
+.page {
+	min-height: 100%;
+	position: relative;
+	box-sizing: border-box;
+	padding-top: $base_padding*6;
+}
+
+.contents {
+	padding: 0 0 $base_padding*6;
+	@include media(sp) {
+		img {
+			max-width: 100%;
+			height: auto;;
+		}
+	}
+}
+.wrapper {
+	box-sizing: border-box;
+	margin: 0 auto;
+	@include clearfix;
+	@include media(pc) {
+		width: $site_width;
+		p + p {
+			margin-top: 1em;
+		}
+	}
+	@include media(tb) {
+		width: 100%;
+	}
+	@include media(sp) {
+		width: 100%;
+	}
+}
+
+.wrapper.w-gutter {
+	box-sizing: border-box;
+	margin: 0 auto;
+	@include media(pc) {
+		width: $site_width;
+	}
+	@include media(sp) {
+		padding: 0 $base_padding*2;
+	}
+	p + p {
+		margin-top: 1em;
+	}
+}
+
+.container {
+	box-sizing: border-box;
+	width: $container_width;
+	margin: 0 auto;
+	@include clearfix;
+	@include media(sp) {
+		width: 100%;
+		padding: 0 $base_padding*2;
+	}
+}
+.block {
+	box-sizing: border-box;
+	position: relative;
+	z-index: 10;
+	padding: $base_padding*5 0;
+	background: $base_white_color;
+	@include media(sp) {
+		padding: $base_padding*4 0;
+	}
+}

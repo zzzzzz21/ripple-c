@@ -1,0 +1,76 @@
+@charset "utf-8";
+// ===================================================================
+//  File:	components/_hero-unit.scss
+//  Date:	2017-02-24(UTC+9)
+//  Note:	
+// ===================================================================
+.hero-unit {
+	display: flex;
+	display: -webkit-flex;
+	flex-flow: column-reverse nowrap;
+    -webkit-flex-direction:column-reverse;/*--- safari（PC）用 ---*/
+	//	[media queries PC]
+	// ----------------------------------------
+	@include media(pc) {
+		flex-flow: row wrap;
+	}
+	&__image,
+	&__body {
+		flex-grow: 1;
+		//	[media queries PC]
+		// ----------------------------------------
+		@include media(pc) {
+			width: 50%;
+			align-self: stretch;
+		}
+	}
+	@include element(image) {
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+	@include element(body) {
+		box-sizing: border-box;
+		&__inner {
+			box-sizing: border-box;
+			padding: 2em $base_padding*2;
+			//	[media queries PC]
+			// ----------------------------------------
+			@include media(pc) {
+				max-width: 630px;
+			}
+		}
+	}
+	//	[media queries PC]
+	// ----------------------------------------
+	@include media(pc) {
+		&.is-reverse {
+			flex-flow: row-reverse wrap;
+			.hero-unit__body {
+				@include clearfix;
+			}
+			.hero-unit__body__inner {
+				float: right;
+			}
+		}
+	}
+	//	[media queries PC]
+	// ----------------------------------------
+	&.is-contents {
+		flex-flow: column nowrap;
+	    -webkit-flex-direction:column;/*--- safari（PC）用 ---*/
+		@include media(pc) {
+			flex-flow: row wrap;
+			.hero-unit__body {
+				@include clearfix;
+			}
+			.hero-unit__body:first-child {
+				.hero-unit__body__inner {
+					width: 630px;
+					float: right;
+				}
+			}
+		}
+	}
+}

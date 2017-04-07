@@ -1,0 +1,78 @@
+@charset "utf-8";
+// ===================================================================
+//  File:	components/_main-image.scss
+//  Date:	201-02-24(UTC+9)
+//  Note:	
+// ===================================================================
+// -------------------------------------------------------------------
+// 	.main-image
+// -------------------------------------------------------------------
+.main-image {
+	.wrapper {
+		position: relative;
+	}
+	@include element(shoulder) {
+		position: absolute;
+		top: $base_padding*3;
+		left: $base_padding*2;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			top: unset;
+			bottom: $base_padding*5;
+			right: $base_padding*2;
+			left: unset;
+			body:not(.siteIndex) & {
+				bottom: $base_padding;
+			}
+		}
+		.shoulder-logo {
+			margin-bottom: $base_padding*2;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				display: none;
+			}
+		}
+		.shoulder-toefl {
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				img {
+					width: 60%;
+					height: auto;
+					float: right;
+				}
+			}
+		}
+	}
+	.slider img,
+	.cover-image img {
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			width: 100%;
+			height: auto;
+		}
+	}
+	@include element(links) {
+		position: absolute;
+		top: 0;
+		right: 0;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			display: none;
+		}
+	}
+	@include element(info) {
+		position: absolute;
+		bottom: $base_padding*3;
+		right: $base_padding*3;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			display: none;
+		}
+	}
+}

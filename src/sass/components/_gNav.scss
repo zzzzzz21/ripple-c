@@ -1,0 +1,255 @@
+@charset "utf-8";
+// ===================================================================
+//  File:	layout/_header.scss
+//  Date:	2016-05-02(UTC+9)
+//  Note:	
+// ===================================================================
+// 	ハンバーガーメニュー
+// ----------------------------------------
+.gNav {
+	position: relative;
+	//	[media queries PC]
+	// ----------------------------------------
+	@include media(pc) {
+		body:not(siteIndex) & {
+			margin-top: $base_padding*6;
+		}
+	}
+	//	[media queries SP]
+	// ----------------------------------------
+	@include media(sp) {
+		box-sizing: border-box;
+		width: 100%;
+		height: 60px;
+		padding: $base_padding 0 $base_padding $base_padding*2;
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 999;
+		background-color: rgba($base_white_color, .8);
+		.siteLogo img {
+			width: auto;
+			height: 40px;
+		}
+	}
+	// 	MENUボタン
+	// ----------------------------------------
+	@include element(title) {
+		box-sizing: border-box;
+		display: block;
+		position: absolute;
+		overflow: hidden;
+		right: 0;
+		top: 0;
+		width: 60px;
+		height: 60px;
+		padding: 12px 8px;
+		background: $base_menu_color;
+		cursor: pointer;
+		z-index: 150;
+		&:after {
+			position: absolute;
+			display: block;
+			width: 100%;
+			@include alignC;
+			bottom: 1px;
+			left: 0;
+			color: $base_text_color;
+			@include fontsize(10);
+			text-transform: uppercase;
+			content: 'menu';
+			text-align: center;
+		}
+		> span {
+			position: relative;
+			display: block;
+			&:before,  &:after, > span:before, > span:after {
+				position: absolute;
+				content: '';
+				display: block;
+				width: 44px;
+				height: 3px;
+				background: $base_text_color;
+				@include transition(all linear .5s);
+			}
+			&:before {
+				top: 0;
+			}
+			&:after {
+				bottom: 11px;
+			}
+			> span {
+				display: block;
+				width: 24px;
+				height: 36px;
+				text-indent: 100%;
+				white-space: nowrap;
+				overflow: hidden;
+			}
+			> span:before, > span:after {
+				top: 11px;
+			}
+		}
+		//	[MENU open]
+		.is-open & {
+			background: $base_menu_color;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp){
+				position: fixed;
+				@include opacity(1);
+			}
+			&:after {
+				content: 'close';
+				color: $base_text_color;
+			}
+			> span {
+				&:before,  &:after, > span:before, > span:after {
+					background: $base_text_color;
+				}
+				&:before, &:after {
+					-webkit-transform: translateX(200%);
+					transform: translateX(200%);
+				}
+			}
+			> span > span {
+				&:before {
+					-webkit-transform: rotate(315deg);
+					transform: rotate(315deg);
+				}
+				&:after {
+					-webkit-transform: rotate(-315deg);
+					transform: rotate(-315deg);
+				}
+			}
+		}
+	}
+	// 	MENU本体
+	// ----------------------------------------
+	@include element(body) {
+		@include media(sp) {
+			display: none;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 100;
+			overflow: auto;
+			background: $base_menu_overlay;
+		}
+	}
+	@include element(contents) {
+		box-sizing: border-box;
+		width: $site_width;
+		margin: 0 auto;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			width: 100%;
+			margin: $base_padding*8 auto 0;
+			color: $base_white_color;
+		}
+		@include element(title) {
+			display: none;
+		}
+		@include element(body) {
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				padding: 0 $base_padding*2;
+			}
+			ul {
+				display: table;
+				margin: 0 auto;
+				border-left: 1px solid $base_border_color;
+				@include clearfix;
+				//	[media queries SP]
+				// ----------------------------------------
+				@include media(sp) {
+					display: block;
+					border: none;
+				}
+			}
+		}
+	}
+	@include element(item) {
+		text-transform: uppercase;
+		display: table-cell;
+		vertical-align: top;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			display: block;
+			width: 48%;
+			float: left;
+			&:nth-child(2n) {
+				float: right;
+			}
+			&:nth-child(n+3) {
+				margin-top: 4%;
+			}
+		}
+		> a, >span {
+			box-sizing: border-box;
+			display: block;
+			padding: .8em 1.6em;
+			@include fontsize(20);
+			color: $base_text_color;
+			text-align: center;
+			border-right: 1px solid $base_border_color;
+			@include transition(all linear .5s);
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				@include fontsize(16);
+				border: 1px solid $base_border_color;
+				border-radius: $base_radius*2;
+			}
+		}
+		>span {
+			color: lighten($base_text_color, 60%);
+		}
+		.en {
+			@include fontsize(12);
+			display: block;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				border-radius: $base_radius*4;
+				background: #aeaead;
+				color: $base_white_color;
+			}
+		}
+	}
+	//	[media queries SP]
+	// ----------------------------------------
+	@include media(sp) {
+		.is-policy .en { background-color: $color_policy; }
+		.is-course .en { background-color: $color_course; }
+		.is-access .en { background-color: $color_access; }
+		.is-guide .en { background-color: $color_guide; }
+		.is-news .en { background-color: $color_news; }
+		.is-contact .en { background-color: $color_contact; }
+	}
+}
+
+.gNav__item {
+	.is-current a,
+	a:hover,
+	.siteIndex &.is-top a,
+	.xPolicy &.is-policy a,
+	.xCourse &.is-course a,
+	.xAccess &.is-access a,
+	.xGuide &.is-guide a,
+	.xGuide &.is-guide >span,
+	.xNews &.is-news a,
+	.xNews &.is-news >span,
+	.xContact &.is-contact a {
+		background: $base_gnav_hover_color;
+		color: $base_white_color;
+	}
+}
+
+
+

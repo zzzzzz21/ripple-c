@@ -1,0 +1,133 @@
+@charset "utf-8";
+// ===================================================================
+//  File:	pages/_policy.scss
+//  Date:	2017-02-24(UTC+9)
+//  Note:	
+// ===================================================================
+// -------------------------------------------------------------------
+// 	.policy-unit
+// -------------------------------------------------------------------
+.policy-unit {
+	.hero-unit {
+		background: #f0f0f0;
+	}
+	.hero-unit__body__inner {
+		//	[media queries PC]
+		// ----------------------------------------
+		@include media(pc) {
+			padding: 3em 4em;
+			@include fontsize(14);
+		}
+	}
+	@include element(title) {
+		margin-bottom: .8em;
+		@include fontsize(18);
+		font-family: $base_font_family_rounded;
+		letter-spacing: .125em;
+		font-weight: normal;
+		//	[media queries PC]
+		// ----------------------------------------
+		@include media(pc) {
+			@include fontsize(28);
+		}
+	}
+	p {
+		line-height: 2;
+		& + p {
+			margin-top: 1em;
+		}
+	}
+
+	// 	.policy-unit__body
+	// -------------------------------------------------
+	@include element(body) {
+		padding: 2em 0;
+		//	[media queries PC]
+		// ----------------------------------------
+		@include media(pc) {
+			padding: 6em 0;
+			@include fontsize(14);
+			text-align: center;
+		}
+		@include element(title) {
+			margin: 0 auto 1.8em;
+			font-family: $base_font_family_rounded;
+			font-weight: normal;
+			text-align: center;
+			@include fontsize(18);
+			//	[media queries PC]
+			// ----------------------------------------
+			@include media(pc) {
+				@include fontsize(24);
+				margin-bottom: 3em;
+			}
+		}
+		.slick,
+		.slick + .container {
+			margin: $base_padding*6 auto 0;
+			//	[media queries PC]
+			// ----------------------------------------
+			@include media(pc) {
+				margin: $base_padding*8 auto 0;
+			}
+		}
+		.commit {
+			//	[media queries PC]
+			// ----------------------------------------
+			@include media(pc) {
+				line-height: 2.2;
+			}
+		}
+	}
+}
+
+
+// 	なぜプリスクールが選ばれるのか
+// -------------------------------------------------
+.why-choose-dl {
+	dt {
+		display: block;
+		margin-bottom: .8em;
+		font-weight: 800;
+		//	[media queries PC]
+		// ----------------------------------------
+		@include media(pc) {
+			@include fontsize(16);
+		}
+	}
+	dd {
+		margin-left: 2em;
+		& + dt {
+			margin-top: 1.6em;
+		}
+	}
+}
+
+
+// 	当スクールの強み
+// -------------------------------------------------
+.policy-strength-dl {
+	line-height: 2.2;
+	dt {
+		display: block;
+		margin-bottom: .8em;
+		font-weight: 800;
+		//	[media queries PC]
+		// ----------------------------------------
+		@include media(pc) {
+			@include fontsize(16);
+		}
+	}
+	dd {
+		//	[media queries PC]
+		// ----------------------------------------
+		@include media(pc) {
+			@include fontsize(14);
+		}
+		& + dt {
+			margin-top: 2.5em;
+		}
+	}
+}
+
+

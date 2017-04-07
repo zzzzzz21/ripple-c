@@ -1,0 +1,474 @@
+@charset "utf-8";
+// ===================================================================
+//  File:	pages/_course.scss
+//  Date:	2017-02-24(UTC+9)
+//  Note:	
+// ===================================================================
+// -------------------------------------------------------------------
+// 	.course-nav
+// -------------------------------------------------------------------
+.course-nav {
+	.leadTxt + & {
+		margin-top: $base_padding*4;
+		//	[media queries PC]
+		// ----------------------------------------
+		@include media(pc) {
+			margin-top: $base_padding*8;
+		}
+	}
+	display: block;
+	@include clearfix;
+	//	[media queries PC]
+	// ----------------------------------------
+	@include media(pc) {
+		ul {
+			display: table;
+			width: 100%;
+		}
+	}
+	@include element(item) {
+		box-sizing: border-box;
+		&:nth-child(n+2) {
+			margin-top: $base_padding*4;
+		}
+		//	[media queries PC]
+		// ----------------------------------------
+		@include media(pc) {
+			display: table-cell;
+			width: 25%;
+			margin: 0;
+			text-align: center;
+		}
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			display: block;
+			width: 80%;
+			margin-right: auto;
+			margin-left: auto;
+			text-align: center;
+		}
+		a {
+			position: relative;
+			display: block;
+			padding: 0 0 $base_padding*4;
+			color:$base_text_color;
+			@include transition(all ease .3s .3s);
+			&:hover {
+				opacity: .8;
+			}
+			&:after {
+				position: absolute;
+				width: $base_padding*2;
+				height: $base_padding*2;
+				bottom: 0;
+				left: 48%;
+				border-right: 2px solid $base_border_color;
+				border-bottom: 2px solid $base_border_color;
+				content: '';
+				transform: rotate(45deg);
+				@include transition(all ease .3s .3s);
+			}
+			&:hover:after {
+				bottom: -8px;
+			}
+		}
+	}
+	@include element(dl) {
+		margin-top: $base_padding*2;
+		dt {
+			font-family: $base_font_family_rounded;
+			@include fontsize(24);
+			font-weight: 700;
+			line-height: 1.2;
+			color: lighten($base_text_color,20%);
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				@include fontsize(18);
+			}
+		}
+		dd {
+			//	[media queries PC]
+			// ----------------------------------------
+			@include media(pc) {
+				margin-top: 1em;
+			}
+		}
+	}
+}
+
+// -------------------------------------------------------------------
+// 	.course-unit
+// -------------------------------------------------------------------
+.course-unit {
+	// 	.course-unit__head
+	// -------------------------------------------------
+	@include element(head) {
+		@include fontsize(16);
+		//	[media queries PC]
+		// ----------------------------------------
+		@include media(pc) {
+			.hero-unit__image, .hero-unit__body {
+				align-self: center;
+			}
+			@include fontsize(18);
+		}
+		.hero-unit__body__inner {
+			box-sizing: border-box;
+			padding: 2em $base_padding*2;
+			//	[media queries PC]
+			// ----------------------------------------
+			@include media(pc) {
+				padding: 2em;
+			}
+		}
+	}
+	@include element(title) {
+		@include fontsize(18);
+		font-family: $base_font_family_rounded;
+		letter-spacing: .125em;
+		color: $base_white_color;
+		//	[media queries PC]
+		// ----------------------------------------
+		@include media(pc) {
+			@include fontsize(28);
+		}
+	}
+	.course-target {
+		display: inline-block;
+		padding: .4em 1em;
+		background: #f90;
+		border-radius: $base_radius*6;
+		font-weight: bold;
+		color: $base_white_color;
+	}
+	.course-unit__catch {
+		margin: .8em 0 1.6em;
+		@include fontsize(16);
+		//	[media queries PC]
+		// ----------------------------------------
+		@include media(pc) {
+			@include fontsize(18);
+		}
+	}
+	p {
+		line-height: 2;
+		& + p {
+			margin-top: 1em;
+		}
+	}
+	// 	course-coloring
+	// -----------------
+	&.course-kids .course-unit__head {
+		background-color: $color_kids;
+	}
+	&.course-ps .course-unit__head {
+		background-color: $color_ps;
+	}
+	&.course-NE .course-unit__head {
+		background-color: $color_NE;
+		.course-target {
+			background-color: $base_green_color;
+		}
+	}
+	&.course-global .course-unit__head {
+		background-color: $color_global;
+		.course-target {
+			background-color: #2c2cba;
+		}
+	}
+
+	// 	.course-unit__body
+	// -------------------------------------------------
+	@include element(body) {
+		//	[media queries PC]
+		// ----------------------------------------
+		@include media(pc) {
+			@include fontsize(16);
+		}
+	}
+}
+
+
+// 	.course-kids
+// -------------------------------------------------
+.course-kids,
+.course-NE,
+.course-global {
+	.course-unit__body {
+		padding: 2em 0;
+		//	[media queries PC]
+		// ----------------------------------------
+		@include media(pc) {
+			padding: 4em 0;
+		}
+	}
+}
+.course-dl {
+	& + & {
+		margin-top: 3em;
+	}
+	dt {
+		display: block;
+		margin-bottom: .8em;
+		padding: 0 0 .4em;
+		border-bottom: 4px solid;
+		font-weight: 800;
+		@include fontsize(18);
+		//	[media queries PC]
+		// ----------------------------------------
+		@include media(pc) {
+			@include fontsize(20);
+		}
+	}
+	&:nth-child(n+1) dt { border-color: #e70e45; }	//Communication コース
+	&:nth-child(n+2) dt { border-color: #ff9151; }		//Study コース
+	&:nth-child(n+3) dt { border-color: #ded082; }		//TOEFL／英検対策 コース
+	&:nth-child(n+4) dt { border-color: #fecc5b; }		//Phonics Reading コース
+	&:nth-child(n+5) dt { border-color: #7fd4ab; }		//Special Acativity コース
+}
+
+
+// 	.course-ps
+// -------------------------------------------------
+.course-ps {
+	.course-unit__body {
+		padding: 0 0 2em;
+		//	[media queries PC]
+		// ----------------------------------------
+		@include media(pc) {
+			padding: 0 0 5em;
+		}
+		.hero-unit__body:nth-child(2n) {
+			background-color: #f0f0f0;
+		}
+		.hero-unit__body__inner {
+			padding: 2em $base_padding*2;
+			//	[media queries PC]
+			// ----------------------------------------
+			@include media(pc) {
+				padding: 5em 2em;
+			}
+		}
+	}
+	@include element(title) {
+		display: table;
+		margin: 0 auto 1.8em;
+		padding: .4em 1em;
+		background: #fc0;
+		border-radius: $base_radius*3;
+		color: #f60;
+		font-family: $base_font_family_rounded;
+		@include fontsize(18);
+		//	[media queries PC]
+		// ----------------------------------------
+		@include media(pc) {
+			@include fontsize(24);
+			margin-bottom: 3em;
+		}
+	}
+	.concept-block {
+		& + .concept-figure {
+			margin-top: 2em;
+		}
+		//	[media queries PC]
+		// ----------------------------------------
+		@include media(pc) {
+			display:table;
+			width: 100%;
+		}
+	}
+	.concept-figure {
+		text-align: center;
+		img {
+			width: auto;
+			height: auto;
+		}
+		& + .concept-block {
+			margin-top: 2em;
+		}
+	}
+	// 	.course-curriculum, .course-event
+	// -------------------------------------------------
+	.curriculum-block,
+	.event-section {
+		padding: 2em 0;
+		//	[media queries PC]
+		// ----------------------------------------
+		@include media(pc) {
+			padding: 5em 0;
+		}
+	}
+	.curriculum-block {
+		background-color: #f6efd1;
+		//	[media queries PC]
+		// ----------------------------------------
+		@include media(pc) {
+			text-align: center;
+		}
+		.curriculum-figure {
+			margin-top: 2em;
+		}
+	}
+}
+
+
+// 	.course-NE
+// -------------------------------------------------
+.course-NE {
+	@include element(title) {
+		@extend .course-ps__title;
+		padding: .4em 4em;
+		background-color: $color_NE;
+		color: #063;
+	}
+}
+
+
+// 	.course-global
+// -------------------------------------------------
+.course-global {
+	@include element(title) {
+		@extend .course-ps__title;
+		margin-bottom: 1em;
+		padding: .4em 4em;
+		background-color: #bdc1e6;
+		color: #5858a5;
+	}
+	@include element(theme) {
+		margin-bottom: 1em;
+		padding: .5em;
+		background: #eee;
+		text-align: center;
+		@include fontsize(18);
+		//	[media queries PC]
+		// ----------------------------------------
+		@include media(pc) {
+			@include fontsize(24);
+		}
+	}
+	.course-unit__body.even {
+		background-color: #e7f0f6;
+	}
+	.leadTxt {
+		//	[media queries PC]
+		// ----------------------------------------
+		@include media(pc) {
+			text-align: center;
+		}
+	}
+}
+
+
+.class-concept {
+	$peach: #ff00a4;
+	$apple: #f00;
+	$lemon: #fc0;
+	$orange: #f60;
+	box-sizing: border-box;
+	padding: 0 0 0 2em;
+	border-left: 8px solid;
+	& + &,
+	& + .concept-figure {
+		margin-top: 4em;
+	}
+	//	[media queries PC]
+	// ----------------------------------------
+	@include media(pc) {
+		display: table-cell;
+		margin-top: 0;
+		padding: 0 1em;
+		border: none;
+		vertical-align: top;
+	}
+	&.is-peach { border-color: $peach; .main { color: $peach; }}
+	&.is-apple { border-color: $apple; .main { color: $apple; }}
+	&.is-lemon { border-color: $lemon; .main { color: $lemon; }}
+	&.is-orange { border-color: $orange; .main { color: $orange; }}
+	dt {
+		.main {
+			@include fontsize(18);
+			font-weight: bold;
+		}
+		span {
+			@include fontsize(14);
+		}
+	}
+}
+
+.event-block {
+	//	[media queries PC]
+	// ----------------------------------------
+	@include media(pc) {
+		display: table;
+		width: 100%;
+	}
+	@include element(item) {
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			& + .event-block__item {
+				margin-top: 4em;
+			}
+		}
+		box-sizing: border-box;
+		//	[media queries PC]
+		// ----------------------------------------
+		@include media(pc) {
+			display: table-cell;
+			width: 25%;
+		}
+	}
+	@include element(image) {
+		margin: 0 auto 2em;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			text-align: center;
+			display: table;
+		}
+		img {
+			box-shadow: 6px 6px 6px #ccc;
+		}
+	}
+	@include element(body) {
+		@include element(item) {
+			position: relative;
+			padding-left: 1.6em;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				margin-left: 2em;
+			}
+			&:before {
+				position: absolute;
+				top: .4em;
+				left: 0;
+				display: block;
+				width: 1em;
+				height: 1em;
+				border-radius: 50%;
+				content: '';
+				background-color: $base_text_color;
+			}
+			& + .event-block__body__item {
+				margin-top: 1em;
+			}
+		}
+	}
+}
+
+.schedule-list {
+	margin: 0 auto;
+	.item__head,
+	.item__body {
+		padding: .6em;
+		font-weight: normal;
+		text-align: left;
+		white-space: nowrap;
+		vertical-align: top;
+	}
+	.item__head {
+	}
+}
