@@ -41,110 +41,17 @@
 }
 
 
-// 	.schedule-table
-// -------------------------------------------------
-.schedule-table {
-	border-top: 1px solid $base_white_color;
-	th, td {
-		vertical-align: top;
-		padding: 1em;
-	}
-	.th-time {
-		padding: 1.2em 1em;
-		font-weight: normal;
-		text-align: left;
-		white-space:nowrap;
-	}
-	td {
-		dt {
-			display: inline-block;
-			margin: 0 0 .6em;
-			padding: .2em .6em;
-			background: #ffea00;
-			font-weight: bold;
-		}
-	}
-}
-
-
-// 	.plan-table
-// -------------------------------------------------
-.plan-table {
-	min-width: 100%;
-	th, td {
-		padding: 1em;
-		border: 1px solid $base_border_color;
-		vertical-align: top;
-		text-align: left;
-		font-weight: normal;
-	}
-	thead th {
-		background-color: #6d7173;
-		color: $base_white_color;
-	}
-	tbody th,
-	tbody td {
-		white-space: nowrap;
-	}
-	tbody tr:nth-child(2n) th,
-	tbody tr:nth-child(2n) td {
-		background: #f3f4f4;
-	}
-	tbody tr:nth-child(3n+1) th { background-color: #efffc7; }
-	tbody tr:nth-child(3n+2) th { background-color: #c2e1cc; }
-	tbody tr:nth-child(3n+3) th { background-color: #95b2c3; }
-}
-
 // 	.fact-table
 // -------------------------------------------------
 .fact-table {
-	//	[media queries PC]
-	// ----------------------------------------
-	@include media(pc) {
-		width: 810px;
-		margin-right: auto;
-		margin-left: auto;
-	}
-	@include element(title) {
-		padding: 0 0 .2em;
-		margin: 0 0 .8em;
-		border-bottom: 5px solid $base_border_color;
-		color: lighten($base_text_color, 20%);
-		font-weight: normal;
-		letter-spacing: .125em;
-		@include fontsize(18);
-		//	[media queries PC]
-		// ----------------------------------------
-		@include media(pc) {
-			@include fontsize(24);
-		}
-		.sub {
-			@include fontsize(14);
-			font-weight: normal;
-			letter-spacing: 0;
-			//	[media queries PC]
-			// ----------------------------------------
-			@include media(pc) {
-				@include fontsize(18);
-			}
-		}
-	}
-	& + & {
-		margin-top: $base_padding*4;
-		//	[media queries PC]
-		// ----------------------------------------
-		@include media(pc) {
-			margin-top: $base_padding*8;
-		}
-	}
-	.body {
-		margin-top: 1em;
-	}
 	@include element(body) {
 		width: 100%;
-		//	[media queries PC]
+		//	[media queries PC-tablet]
 		// ----------------------------------------
-		@include media(pc) {
+		@include media(pc-tb) {
+			width: 810px;
+			margin-right: auto;
+			margin-left: auto;
 			@include fontsize(14);
 		}
 		th, td {
@@ -152,29 +59,23 @@
 			font-weight: normal;
 			vertical-align: top;
 			text-align: left;
-			//	[media queries PC]
+			display: block;
+			//	[media queries PC-tablet]
 			// ----------------------------------------
-			@include media(pc) {
-				border-bottom: 1px dotted $base_border_color;
-			}
-			//	[media queries SP]
-			// ----------------------------------------
-			@include media(sp) {
-				display: block;
+			@include media(pc-tb) {
+				display: table-cell;
+				padding: 2em 1em;
+				border-top: 1px solid $base_border_color;
+				border-bottom: 1px solid $base_border_color;
 			}
 		}
-		//	[media queries SP]
-		// ----------------------------------------
-		@include media(sp) {
-			th {
-				background-color: lighten($base_border_color, 10%);
-			}
-		}
-		//	[media queries PC]
-		// ----------------------------------------
-		@include media(pc) {
-			th {
+		th {
+			background-color: lighten($base_border_color, 10%);
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
 				width: 30%;
+				background: none;
 			}
 		}
 	}
@@ -182,109 +83,7 @@
 		margin-top: 1em;
 		line-height: 1.6;
 	}
-	.fact-list {
-		//	[media queries PC]
-		// ----------------------------------------
-		@include media(pc) {
-			@include fontsize(14);
-		}
-		li {
-			& + li {
-				margin-top: 1em;
-			}
-		}
-	}
 }
 .nowrap {
 	white-space: nowrap;
-}
-
-// 	.contact-table
-// -------------------------------------------------
-.contact-table {
-	width: 100%;
-	@include fontsize(16);
-	//	[media queries PC]
-	// ----------------------------------------
-	@include media(pc) {
-		@include fontsize(14);
-		border-top: 1px dotted $base_border_color;
-	}
-	th, td {
-		padding: 1em;
-		font-weight: normal;
-		vertical-align: top;
-		text-align: left;
-		//	[media queries PC]
-		// ----------------------------------------
-		@include media(pc) {
-			border-bottom: 1px dotted $base_border_color;
-		}
-		//	[media queries SP]
-		// ----------------------------------------
-		@include media(sp) {
-			padding: .6em;
-			display: block;
-		}
-	}
-	.required {
-		tr {}
-		th{ 
-			position: relative;
-			&:after {
-				padding-left: .4em;
-				content: '*';
-				color: $color_required;
-			}
-		}
-	}
-	th {
-		white-space: nowrap;
-		//	[media queries PC]
-		// ----------------------------------------
-		@include media(pc) {
-			width: 30%;;
-			text-align: right;
-		}
-		//	[media queries SP]
-		// ----------------------------------------
-		@include media(sp) {
-			background-color: lighten($base_border_color, 10%);
-		}
-	}
-	td {
-		//	[media queries SP
-		// ----------------------------------------
-		@include media(sp) {
-			padding: .6em 0 1em;
-		}
-	}
-	.input-text,
-	.input-tel,
-	.input-num {
-		box-sizing: border-box;
-		padding: .6em;
-		//	[media queries PC]
-		// ----------------------------------------
-		@include media(pc) {
-			border: none;
-			background: lighten($base_text_color,75%);
-		}
-		//	[media queries SP
-		// ----------------------------------------
-		@include media(sp) {
-			width: 100%;
-		}
-	}
-	.input-text,
-	.input-tel,
-	.input-text.multiple {
-		width: 100%;
-	}
-	.is-age {
-		width: 4em;
-	}
-	.input-label {
-		margin-left: 1em;
-	}
 }

@@ -1,0 +1,27 @@
+@charset "utf-8";
+// ===================================================================
+//  File:	components/_mainVisual.scss
+//  Date:	2017-04-10(UTC+9)
+//  Note:	
+// ===================================================================
+// -------------------------------------------------------------------
+// 	..mainVisual
+// -------------------------------------------------------------------
+.mainVisual {
+	position: relative;
+	.cover-image img {
+		width: 100%;
+		height: auto;
+	}
+	@include element(link) {
+		position: absolute;
+		bottom: 2%;
+		right: 2%;
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			bottom: 2%;
+			right: 2%;
+		}
+	}
+}

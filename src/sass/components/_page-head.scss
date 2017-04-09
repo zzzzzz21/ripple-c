@@ -1,29 +1,17 @@
 @charset "utf-8";
 // ===================================================================
 //  File:	components/_page-head.scss
-//  Date:	2016-05-02(UTC+9)
+//  Date:	2017-04-10(UTC+9)
 //  Note:	
 // ===================================================================
-.page-head {
-	padding: $base_padding*3 0 $base_padding*6;
-	//	[media queries PC]
+body:not(.siteIndex) {
+	//	トップページ以外に適用される
 	// ----------------------------------------
-	@include media(pc) {
-		padding: $base_padding*9 0 $base_padding*6;
-	}
-	@include element(body) {
-		margin-top: 2em;
-		@include fontsize(16);
-	}
-	.leadTxt {
-		line-height: 2;
-		//	[media queries PC]
-		// ----------------------------------------
-		@include media(pc) {
-			@include alignC;
-		}
-		& + .leadTxt {
-			margin-top: 1.6em;
-		}
+	.page-head {
+		background: url(#{$image_path}bg_content-top.png) 0 0 no-repeat;
+		background-attachment: fixed;
+		background-size: cover;
+		height: $base_padding*8;
 	}
 }
+

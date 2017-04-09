@@ -1,37 +1,31 @@
 @charset "utf-8";
 // ===================================================================
 //  File:	layout/_footer.scss
-//  Date:	2016-05-02(UTC+9)
+//  Date:	2017-04-10(UTC+9)
 //  Note:	
 // ===================================================================
-// -------------------------------------------------------------------
-// 	.pageFooter
-// -------------------------------------------------------------------
-.pageFooter {
-	position: relative;
-	z-index: 20;
-	padding: $base_padding*7 0;
-}
-
-
 // -------------------------------------------------------------------
 // 	.globalFooter
 // -------------------------------------------------------------------
 .globalFooter {
-	.wrapper {
+	@include centering;
+	padding: $base_padding*2 0;
+	background: $base_footer_color;
+	z-index: 30;
+	.container {
 		position: relative;
-		background: $base_footer_color;
 	}
 	// -------------------------------------------------
 	// 	.gotoTop
 	// -------------------------------------------------
 	.gotoTop {
-		@include clearfix;
 		position: absolute;
-		top: -($base_padding*6);
-		right: $base_padding;
-		@include media(sp) {
-			top: -($base_padding*6);
+		right: 25px;
+		top: -20px;
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			top: -($base_padding*8);
 		}
 		a.btn-toTop {
 			@include btn-up;
@@ -44,163 +38,19 @@
 				border-color: $base_text_color;
 			}
 			&:hover, &:active {
-				@include opacity(1)
+				@include opacity(1);
+				background: $base_footer_color;
+				border-color: $base_border_color;
 			}
-		}
-	}
-	// -------------------------------------------------
-	// 	.fNav
-	// -------------------------------------------------
-	.fNav {
-		@include element(title) {
-			position:relative;
-			padding: $base_padding $base_padding*4;
-			border-bottom: 1px solid $base_white_color;
-			//	[media queries SP]
-			// ----------------------------------------
-			@include media(sp){
-				padding: $base_padding $base_padding*2;
-			}
-			&:before {
-				position: relative;
-				display: inline-block;
-				content: url('/koshigaya/share/img/ico_home-footer.png');
-				width: 23px;
-				height: 27px;
-				vertical-align: middle;
-				margin-right: 1em;
-			}
-			a {
-				color: $base_text_color;
-			}
-		}
-		@include element(body) {
-			background: $base_white_color;
-			//	[media queries PC]
-			// ----------------------------------------
-			@include media(pc){
-				padding: $base_padding*3 $base_padding*4;
-				background-color: transparent;
-			}
-		}
-		@include element(item) {
-			a {
-				display: block;
-				color: $base_text_color;
-				//	[media queries SP]
-				// ----------------------------------------
-				@include media(sp){
-					padding: $base_padding*2;
-					border-bottom: 1px solid $base_border_color;
-				}
-			}
-			//	[media queries PC]
-			// ----------------------------------------
-			@include media(pc){
-				display: inline-block;
-				@include fontsize(14);
-				vertical-align: top;
-				&:nth-child(n+2) {
-					padding-left: 6em;
-				}
-				> a {
-					display: block;
-					position: relative;
-					padding: $base_padding;
-					@include transition (all ease .3s);
-					&:before {
-						position: absolute;
-						top: 45%;
-						left: 0;
-						display: inline-block;
-						width: 4px;
-						height: 4px;
-						margin-right: .6em;
-						content: '';
-						border-top: 2px solid $base_text_color;
-						border-right: 2px solid $base_text_color;
-						vertical-align: middle;
-						transform: rotate(45deg);
-						-webkit-transform: rotate(45deg);
-					}
-					&:link {}
-					&:visited {}
-					&:hover {
-						@include transition(all linear .3s .2s);
-						&:before {
-							left: .2em;
-							@include transition(all linear .3s .2s);
-						}
-					}
-					&:active {}
-				}
-			}
-			li {
-				a {
-					padding-left: $base_padding;
-				}
-				& + li {
-					margin-top: 1em;
-				}
-			}
-		}
-	}
-	// -------------------------------------------------
-	// 	.info
-	// -------------------------------------------------
-	.info {
-		@include clearfix;
-		padding: $base_padding*4 $base_padding*2;
-		background: $base_white_color;
-		@include alignC;
-		//	[media queries PC]
-		// ----------------------------------------
-		@include media(pc) {
-			padding: $base_padding*4;
-		}
-		img {
-			width: auto;
-			height: 40px;
-		}
-		.logo-bkh {
-			padding: 0 2em 0 0;
-		}
-		dl:first-child {
-			//	[media queries SP]
-			// ----------------------------------------
-			@include media(ｓｐ){
-				margin-bottom: $base_padding*4;
-			}
-		}
-		img {
-			width: auto;
-			height: 76px;
-		}
-		//	[media queries PC]
-		// ----------------------------------------
-		@include media(pc){
-			dl {
-				float: left;
-				margin-right: $base_padding*2;
-			}
-		}
-		dd {
-			margin-top: 1em;
 		}
 	}
 	// -------------------------------------------------
 	// 	.copyright
 	// -------------------------------------------------
 	.copyright {
-		padding: $base_padding $base_padding*4;
-		border-top: 1px solid $base_white_color;
-		background-color: #999;
+		margin-top: $base_padding;
+		@include alignC;
 		@include fontsize(12);
-		//	[media queries SP]
-		// ----------------------------------------
-		@include media(sp){
-			padding: $base_padding $base_padding*2;
-		}
 	}
 }
 

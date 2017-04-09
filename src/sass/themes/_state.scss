@@ -1,40 +1,27 @@
 @charset "UTF-8";
 // ===================================================================
 //	File:	themes/_state.scss
-//	Date:	2015-05-02(+09:00)
+//	Date:	2017-04-10(+09:00)
 //	Note:	
 // ===================================================================
-// PC/SP
+// media
 // -------------------------------------------------------------------
 .is-sp {
-	display: none;
-	//	[media queries SP]
+	//	[media queries PC-tablet]
 	// ----------------------------------------
-	@include media(sp) {
-		display: block!important;
+	@include media(pc-tb) {
+		display: none;
 	}
 }
 .is-pc {
-	//	[media queries SP]
+	display: none;
+	//	[media queries PC-tablet]
 	// ----------------------------------------
-	@include media(sp) {
-		display: none!important;
+	@include media(pc-tb) {
+		display: block;
 	}
 }
 
-.data-link-sp {
-	//	[media queries PC]
-	// ----------------------------------------
-	@include media(pc) {
-		cursor: default;
-	}
-}
-
-// 必須項目
-// -------------------------------------------------------------------
-.is-required {
-	color: $color_required!important;
-}
 
 // JS
 // -------------------------------------------------------------------

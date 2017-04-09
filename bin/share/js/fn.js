@@ -28,7 +28,11 @@ $(function () {
 	var speed = 500; // ミリ秒
 	var href = $(this).attr('href');
 	var target = $(href == '#' || href == '' ? 'html' : href);
-	var position = target.offset().top - 60;
+	if (windowW < break_point_sp) {
+		var position = target.offset().top - 60;
+	} else {
+		var position = target.offset().top - 100;
+	}
 	$('body, html').animate({ scrollTop: position }, speed, 'swing');
 	return false;
 });
@@ -61,19 +65,6 @@ $gNavItem.on('click', function(){
 
 
 // -------------------------------------------------
-//	fixed header
-// -------------------------------------------------
-/*	$(window).scroll(function () {
-		if ($(window).scrollTop() > mainImgAreaH - 80 ) {
-			header.addClass('is--fixed').fadeIn();
-		} else {
-			header.removeClass('is--fixed');
-			return false;
-		}
-	});
-*/
-
-// -------------------------------------------------
 //	画像入れ替え
 // -------------------------------------------------
 	$(".data-switch").each(function(){
@@ -97,7 +88,7 @@ $gNavItem.on('click', function(){
 // -------------------------------------------------------------------
 // PC表示時にリンク無効化：電話番号リンク
 // -------------------------------------------------------------------
-	$('.block-contact .contact__tel .number a, a.data-link-sp').on('click',function(){
+	$('a.data-link-sp').on('click',function(){
 		if(windowW > break_point_sp) return false;
 	});
 

@@ -1,7 +1,7 @@
 @charset "UTF-8";
 // ===================================================================
 //	File:	helpers/_variable.scss
-//	Date:	2017-02-24(+09:00)
+//	Date:	2017-04-10(+09:00)
 //	Note:	
 // ===================================================================
 // -------------------------------------------------------------------
@@ -17,33 +17,18 @@ $webfont_hannari: 'Open Sans', sans-serif;
 // -------------------------------------------------
 //		Color palette
 // -------------------------------------------------
-$base_corporate_color:	#ffb200;
+$base_corporate_color:	#f39;
 $base_white_color:		#fff;
-$base_green_color:		#396;
-$color_policy:				#09f;
-$color_course:			#c00;
-$color_access:			#399;
-$color_guide:				#f69;
-$color_news:				#f90;
-$color_contact:			#f90;
-$color_kids:				#fe0000;
-$color_ps:					#fc0;
-$color_NE:				#2dbc3a;
-$color_global:				#6672e3;
-$color_info:				#666;
-$color_faq:				#66c;
-$color_required:			#f60;
 
 
 // -------------------------------------------------
 //		Base
 // -------------------------------------------------
 $base_text_color:		#333;
-$base_bg_color:		#ffffff;// for BG
+$base_bg_color:		#fff;// for BG
 $base_border_color:	#ccc;// for BORDER
-$base_footer_color:	#ccc;
-$base_gnav_color:	#f2f2f1;
-$base_gnav_hover_color:	#aeaead;
+$base_footer_color:	#f882bf;
+$base_image_bg_color:	#f8f7f5;
 
 
 // -------------------------------------------------
@@ -55,8 +40,8 @@ $base_hover_color:		lighten($base_link_color,5%); // ↑のhover
 $base_active_color:		$base_link_color;
 $base_btn_color:			rgba(33,33,67,1);
 $base_btn_color_hover:	lighten($base_btn_color,5%); // ↑のhover
-$base_menu_color:		$base_corporate_color;
-$base_menu_overlay:		rgba($base_white_color, .95);
+$base_menu_color:		#000;
+$base_menu_overlay:		rgba($base_corporate_color,.9);
 
 
 // -------------------------------------------------------------------
@@ -75,8 +60,7 @@ $image_path:	"../img/";
 // -------------------------------------------------------------------
 // Size
 // -------------------------------------------------------------------
-$site_width:		1264px;
-$container_width:	980px;
+$site_width:		1080px;
 $design_width:	1024;
 $design_height:	768;
 
@@ -84,12 +68,11 @@ $design_height:	768;
 // -------------------------------------------------------------------
 // Font Setting
 // -------------------------------------------------------------------
-$base_font_size:		13;
+$base_font_size:		14;
 $base_font_family:	"Open Sans", Meiryo,"Hiragino Kaku Gothic ProN", sans-serif;
 $base_font_family_mincho:	"Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "メイリオ", Meiryo, serif;
-$base_font_family_rounded:	"Rounded Mplus 1c";
 $base_line_height:	1.6;
-$sp_base_font_size:	14;
+$sp_base_font_size:	16;
 $sp_base_line_height:	1.8;
 
 
