@@ -86,6 +86,17 @@
 	}
 }
 
+@mixin btn-target {
+	@include btn;
+	&:after {
+		width: 16px;
+		height: 16px;
+		content: url('../img/ico_new-window.png');
+		transform: rotate(0deg);
+		border: none;
+	}
+}
+
 // -------------------------------------------------------------------
 // 	link
 //		@include link;

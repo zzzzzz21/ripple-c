@@ -9,23 +9,23 @@
 // -------------------------------------------------------------------
 .globalFooter {
 	@include centering;
+	position: relative;
 	padding: $base_padding*2 0;
 	background: $base_footer_color;
 	z-index: 30;
-	.container {
-		position: relative;
-	}
 	// -------------------------------------------------
 	// 	.gotoTop
 	// -------------------------------------------------
 	.gotoTop {
 		position: absolute;
-		right: 25px;
-		top: -20px;
+		z-index: 150;
+		top: -60px;
+		right: 20px;
 		//	[media queries PC-tablet]
 		// ----------------------------------------
 		@include media(pc-tb) {
 			top: -($base_padding*8);
+			right: 25px;
 		}
 		a.btn-toTop {
 			@include btn-up;
@@ -43,6 +43,9 @@
 				border-color: $base_border_color;
 			}
 		}
+	}
+	.container {
+		position: relative;
 	}
 	// -------------------------------------------------
 	// 	.copyright

@@ -13,6 +13,20 @@
 		width: 100%;
 		height: auto;
 	}
+	.message {
+		position: absolute;
+		top: 32px;
+		left: 20px;
+		color: $base_white_color;
+		font-weight: bold;
+		@include fontsize(16);
+		text-shadow: 4px 4px 10px rgba($base_text_color, .6);
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			display: none;
+		}
+	}
 	@include element(link) {
 		position: absolute;
 		bottom: 2%;

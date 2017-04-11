@@ -21,6 +21,16 @@
 // 	.siteTitle
 // -------------------------------------------------------------------
 .siteTitle {
+	top: 0;
+	width: 100%;
+	background: $base_bg_color;
+	height: $base_padding*6;
+	//	[media queries PC-tablet]
+	// ----------------------------------------
+	@include media(pc-tb) {
+		height: $base_padding*10;
+		position: fixed;
+	}
 	z-index: 150;
 	@include element(inner) {
 		@include clearfix;
@@ -35,6 +45,7 @@
 	}
 	.siteLogo {
 		position: absolute;
+		z-index: 200;
 		//	[media queries PC-tablet]
 		// ----------------------------------------
 		@include media(pc-tb) {

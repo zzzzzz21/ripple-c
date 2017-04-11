@@ -137,6 +137,16 @@
 				}
 			}
 		}
+		@include modifier(broucher) {
+			* + &, & + .container {
+				margin-top: $base_padding*6;
+				//	[media queries PC-tablet]
+				// ----------------------------------------
+				@include media(pc-tb) {
+					margin-top: $base_padding*8;
+				}
+			}
+		}
 	}
 	.unit {
 		.title {
@@ -165,6 +175,7 @@
 		}
 		@include modifier(contact) {
 			@extend .unit;
+			text-align: center;
 			.title {
 				display: inline-block;
 				padding: .6em 4em;
@@ -197,7 +208,7 @@
 // 	coloring
 // -------------------------------------------------
 .block-rin {
-	border-top-color: #f60;
+	border-top-color: $base_rin_color;
 	.contact--number a:before {
 		content: url(../img/img_tel_rin.png);
 	}
@@ -207,9 +218,23 @@
 	.unit--contact .title {
 		background: #b28850;
 	}
+	.btn-target {
+		box-sizing: border-box;
+		display: inline-block;
+		width: auto;;
+		padding-right: 6em;
+		padding-left: 6em;
+		background: $base_rin_color;
+		color: $base_white_color;
+		&:hover {
+			background: $base_white_color;
+			border: 1px solid $base_border_color;
+			color: $base_rin_color;
+		}
+	}
 }
 .block-meguri {
-	border-top-color: #78c31e;
+	border-top-color: $base_meguri_color;
 	.contact--number a:before {
 		content: url(../img/img_tel_meguri.png);
 	}
@@ -221,7 +246,7 @@
 	}
 }
 .block-kokoro {
-	border-top-color: #ff9699;
+	border-top-color: $base_kokoro_color;
 	.contact--number a:before {
 		content: url(../img/img_tel_kokoro.png);
 	}
@@ -230,7 +255,7 @@
 	}
 }
 .block-puente {
-	border-top-color: #f7db7a;
+	border-top-color: $base_puente_color;
 	.contact--number a:before {
 		content: url(../img/img_tel_puente.png);
 	}

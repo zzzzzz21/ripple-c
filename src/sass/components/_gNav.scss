@@ -32,7 +32,7 @@
 		//	[media queries PC-tablet]
 		// ----------------------------------------
 		@include media(pc-tb) {
-			top: 106px;
+			top: 125px;
 			right: 25px;
 			&:hover {
 				background: $base_menu_color;
