@@ -1,0 +1,4 @@
+Options +FollowSymLinks
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^ripple-c\.jp$
+RewriteRule ^(.*)$ http://www.ripple-c.jp/$1 [R=301,L]

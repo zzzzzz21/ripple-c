@@ -8,6 +8,7 @@ css_dir = "bin/share/css"
 sass_dir = "src/sass"
 images_dir = "bin/share/img"
 javascripts_dir = "bin/share/js"
+Encoding.default_external = "UTF-8"
 
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed

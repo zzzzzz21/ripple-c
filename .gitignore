@@ -28,6 +28,7 @@
     .htaccess
     files
     psd/
+    materials/
 
     # Editor
     # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode
@@ -92,3 +93,4 @@
 release/
 /psd/*.psd
 /files
+/materials
