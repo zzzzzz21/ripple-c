@@ -25,27 +25,37 @@ $base_white_color:		#fff;
 //		Base
 // -------------------------------------------------
 $base_text_color:		#333;
+$base_text2_color:	#4b2e0d;
 $base_bg_color:		#fff;// for BG
 $base_border_color:	#ccc;// for BORDER
-$base_footer_color:	#f882bf;
+$base_footer_color:	#f8a5cf;
 $base_image_bg_color:	#f8f7f5;
+$base_title_color:	#f99;
 
-$base_rin_color:		#f60;
-$base_meguri_color:	#78c31e;
-$base_kokoro_color:	#ff9699;
-$base_puente_color:	#f7db7a;
+// news
+$news-all-color: #f99;
+$news-news-color: #1ed5c2;
+$news-recruit-color: #ff9731;
+$news-seminar-color: #427de0;
+
+// block-contact
+$base_block-contact_color:	#f7cfcc;
+
+// rin color
+$base_rin_color:	#dd5064;
+$base_dayservice_color: #f2902c;
 
 // -------------------------------------------------
 //		Link
 // -------------------------------------------------
-$base_link_color:			#03f;
+$base_link_color:			$base_text2_color;
 $base_visited_color:		$base_link_color;
 $base_hover_color:		lighten($base_link_color,5%); // ↑のhover
 $base_active_color:		$base_link_color;
-$base_btn_color:			rgba(33,33,67,1);
-$base_btn_color_hover:	lighten($base_btn_color,5%); // ↑のhover
-$base_menu_color:		#000;
-$base_menu_overlay:		rgba($base_corporate_color,.9);
+$base_btn_color:			$base_corporate_color;
+$base_btn_color_hover:	lighten($base_btn_color,10%); // ↑のhover
+$base_menu_color:		#f882bf;
+$base_menu_overlay:		lighten($base_menu_color, 8%);
 
 
 // -------------------------------------------------------------------
@@ -64,8 +74,10 @@ $image_path:	"../img/";
 // -------------------------------------------------------------------
 // Size
 // -------------------------------------------------------------------
-$site_width:		1080px;
+$site_width:		1140px;
 $design_width:	1024;
+$base_content_width:	950px;
+$base_table_width: 810px;
 $design_height:	768;
 
 
@@ -74,7 +86,7 @@ $design_height:	768;
 // -------------------------------------------------------------------
 $base_font_size:		14;
 $base_font_family:	"Open Sans", Meiryo,"Hiragino Kaku Gothic ProN", sans-serif;
-$base_font_family_mincho:	"Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "メイリオ", Meiryo, serif;
+$base_font_family_mincho:	"Sawarabi Mincho","Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "メイリオ", Meiryo, serif;
 $base_line_height:	1.6;
 $sp_base_font_size:	16;
 $sp_base_line_height:	1.8;

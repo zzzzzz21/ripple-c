@@ -94,3 +94,6 @@ release/
 /psd/*.psd
 /files
 /materials
+/psd/website
+/design
+/debug.log

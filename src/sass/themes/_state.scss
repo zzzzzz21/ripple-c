@@ -4,25 +4,6 @@
 //	Date:	2017-04-10(+09:00)
 //	Note:	
 // ===================================================================
-// media
-// -------------------------------------------------------------------
-.is-sp {
-	//	[media queries PC-tablet]
-	// ----------------------------------------
-	@include media(pc-tb) {
-		display: none;
-	}
-}
-.is-pc {
-	display: none;
-	//	[media queries PC-tablet]
-	// ----------------------------------------
-	@include media(pc-tb) {
-		display: block;
-	}
-}
-
-
 // JS
 // -------------------------------------------------------------------
 .is-hide {
@@ -56,3 +37,29 @@
 .is-overflow-hidden {
   overflow: hidden !important;
 }
+
+
+// media
+// -------------------------------------------------------------------
+.is-sp {
+	//	[media queries PC-tablet]
+	// ----------------------------------------
+	@include media(pc-tb) {
+		display: none;
+	}
+	//	[media queries SP]
+	// ----------------------------------------
+	@include media(sp) {
+		display: block!important;
+	}
+}
+.is-pc {
+	display: none;
+	//	[media queries PC-tablet]
+	// ----------------------------------------
+	@include media(pc-tb) {
+		display: block;
+	}
+}
+
+

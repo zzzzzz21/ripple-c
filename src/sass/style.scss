@@ -1,7 +1,7 @@
 @charset "utf-8";
 // ===================================================================
-//  File:	/share/css/style.scss
-//  Date:2017-04-10(UTC+9)
+//  File:	/share/css/teaser.scss
+//  Date:2017-04-30(UTC+9)
 //  Note:	made by shimizu@hakarai
 // ===================================================================
 
@@ -29,11 +29,16 @@
 //	Components
 // -------------------------------------------------------------------
 @import "components/page-head";
+@import "components/page-body";
+@import "components/breadcrumb";
 @import "components/gNav";
 @import "components/mainVisual";
 @import "components/google-map";
 @import "components/btn";
 @import "components/table";
+@import "components/tab";
+@import "components/block-news";
+@import "components/block-contact";
 
 
 //	Layout
@@ -48,6 +53,7 @@
 
 //	Pages
 // -------------------------------------------------------------------
+@import "pages/pages";
 @import "pages/top";
 
 

@@ -1,7 +1,7 @@
 @charset "utf-8";
 // ===================================================================
 //  File:	layout/_header.scss
-//  Date:	2017-04-10(UTC+9)
+//  Date:	2017-04-30(UTC+9)
 //  Note:	
 // ===================================================================
 // 	.skip-nav
@@ -24,14 +24,12 @@
 	top: 0;
 	width: 100%;
 	background: $base_bg_color;
-	height: $base_padding*6;
-	//	[media queries PC-tablet]
+	z-index: 150;
+	//	[media queries SP]
 	// ----------------------------------------
-	@include media(pc-tb) {
-		height: $base_padding*10;
+	@include media(sp) {
 		position: fixed;
 	}
-	z-index: 150;
 	@include element(inner) {
 		@include clearfix;
 		display: table;
@@ -40,39 +38,38 @@
 		//	[media queries PC-tablet]
 		// ----------------------------------------
 		@include media(pc-tb) {
-			height: $base_padding*10;
+			width: $site_width;
+			height: $base_padding*9;
+			margin: 0 auto;
 		}
 	}
 	.siteLogo {
-		position: absolute;
-		z-index: 200;
+		display: table-cell;
+		vertical-align: middle;
+		padding: 0 0 0 20px;
+		// ----------------------------------------
+		@include media(sp) {
+			img {
+				width: auto;
+				height: 40px;
+			}
+		}
 		//	[media queries PC-tablet]
 		// ----------------------------------------
 		@include media(pc-tb) {
 			padding-left: $base_padding*5;
 		}
-		img {
-			width: 50%;
-			height: auto;
-			box-shadow: 4px 4px 10px rgba($base_text_color, .6);
-			//	[media queries PC-tablet]
-			// ----------------------------------------
-			@include media(pc-tb) {
-				width: 80%;
-				height: auto;
-			}
-		}
 	}
 	@include element(shoulder) {
 		box-sizing: border-box;
+		display: table-cell;
 		padding-top: .3em;
-		padding-right: .6em;
+		padding-right: 70px;
 		text-align: right;
-		vertical-align: top;
+		vertical-align: middle;
 		//	[media queries PC-tablet]
 		// ----------------------------------------
 		@include media(pc-tb) {
-			padding-top: .8em;
 			padding-right: $base_padding*2.5;
 		}
 		@include element(img) {

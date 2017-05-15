@@ -6,11 +6,19 @@
 // ===================================================================
 // 	ハンバーガーメニュー
 // ----------------------------------------
+.globalHeader {
+	background: lighten($base_menu_overlay,8%);
+}
 .gNav {
 	position: relative;
 	.siteLogo {
 		margin-bottom: 2em;
 		text-align: center;
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			display: none;
+		}
 	}
 	// 	MENUボタン
 	// ----------------------------------------
@@ -20,23 +28,18 @@
 		position: fixed;
 		overflow: hidden;
 		right: 0;
-		top: 66px;
+		top: 0;
 		width: 60px;
 		height: 60px;
 		padding: 12px 8px;
-		background: rgba($base_menu_color, .8);
-		border-radius: $base_radius;
+		background: $base_menu_color;
 		cursor: pointer;
 		z-index: 1100;
 		@include transition(all linear .5s);
 		//	[media queries PC-tablet]
 		// ----------------------------------------
 		@include media(pc-tb) {
-			top: 125px;
-			right: 25px;
-			&:hover {
-				background: $base_menu_color;
-			}
+			display: none;
 		}
 		&:after {
 			position: absolute;
@@ -64,8 +67,9 @@
 				content: '';
 				display: block;
 				width: 44px;
-				height: 3px;
+				height: 4px;
 				background: $base_white_color;
+				border-radius: 6px;
 				@include transition(all linear .5s);
 			}
 			&:before {
@@ -97,7 +101,7 @@
 			}
 			&:after {
 				content: 'close';
-				color: $base_menu_color;
+				color: $base_text_color;
 			}
 			> span {
 				&:before,  &:after, > span:before, > span:after {
@@ -123,76 +127,149 @@
 	// 	MENU本体
 	// ----------------------------------------
 	@include element(body) {
-		display: none;
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		z-index: 100;
-		overflow: auto;
-		background: $base_menu_overlay;
-		z-index: 1000;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			display: none;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 100;
+			overflow: auto;
+			z-index: 1000;
+			background: $base_menu_overlay;
+		}
 	}
 	@include element(contents) {
-		.is-open & {
-			box-sizing: border-box;
+		box-sizing: border-box;
+		width: $site_width;
+		margin: 0 auto;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
 			width: 100%;
 			padding: $base_padding*8 $base_padding*2 0;
-			color: $base_white_color;
-			//	[media queries PC-tablet]
-			// ----------------------------------------
-			@include media(pc-tb) {
-				width: $site_width;
-				margin: 0 auto;
-			}
-		
+			color: $base_text_color;
 		}
+
 		@include element(title) {
 			display: none;
 		}
 		@include element(body) {
-			ul {
-				//	[media queries PC-tablet]
-				// ----------------------------------------
-				@include media(pc-tb) {
-					display: table;
-					margin: 0 auto;
-					border-left: 1px solid $base_border_color;
-					.is-open & {
-						border-left: none;
-					}
-				}
+			display: table;
+			width: 100%;
+			margin: 0 auto;
+			border-left: 1px solid $base_white_color;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				display: block;
+				border: none;
 			}
 		}
 	}
 	@include element(item) {
+		position: relative;
 		display: table-cell;
-		border-right: 1px solid $base_border_color;
+		width: 16.6666%;
+		border-right: 1px solid $base_white_color;
 		text-transform: uppercase;
-		vertical-align: top;
-		.is-open & {
+		vertical-align: bottom;
+		@include transition(all linear .5s);
+		> a, >span {
+			position: relative;
+			box-sizing: border-box;
 			display: block;
+			padding: .8em 1.6em;
+			color: $base_text_color;
+			text-align: center;
+			@include fontsize(16);
+		}
+		//	[media queries PC]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			&.is-current{
+				background: lighten($base_menu_overlay,12%);
+				&:after {
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					content: '';
+					width: 100%;
+					height: 5px;
+					background: #e84693;
+				}
+			}
+			&:hover,
+			.siteIndex &.is-home,
+			.xService &.is-service,
+			.xCompany &.is-company,
+			.xNews &.is-news,
+			.xRecruit &.is-recruit,
+			.xContact &.is-contact {
+				@extend .is-current;
+			}
+		}
+		> a:before {
+			position: relative;
+			display: block;
+			margin: 0 auto .4em;
+		}
+		>span {
+			color: lighten($base_text_color, 60%);
+		}
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			display: block;
+			width: 100%;
 			border: none;
-			> a, >span {
-				box-sizing: border-box;
-				display: block;
-				padding: .8em 1.6em;
-				color: $base_white_color;
-				text-align: center;
-
-				@include transition(all linear .5s);
-				@include fontsize(16);
-			}
-			>span {
-				color: lighten($base_text_color, 60%);
-			}
-			& + .gNav__item {
+			& + & {
 				margin-top: $base_padding*2;
 			}
+			> a, > span {
+				padding-left: 20%;
+				position: relative;
+				text-align: left;
+				vertical-align: middle;
+			}
+			> a:before {
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		}
+		&.is-home >a:before {
+			content: url(../img/ico_home.png);
+			width: 51px;
+			height: 45px;
+		}
+		&.is-service >a:before {
+			content: url(../img/ico_service.png);
+			width: 43px;
+			height: 44px;
+		}
+		&.is-company >a:before {
+			content: url(../img/ico_company.png);
+			width: 28px;
+			height: 45px;
+		}
+		&.is-news >a:before {
+			content: url(../img/ico_news.png);
+			width: 46px;
+			height: 44px;
+		}
+		&.is-recruit >a:before {
+			content: url(../img/ico_recruit.png);
+			width: 51px;
+			height: 47px;
+		}
+		&.is-contact >a:before {
+			content: url(../img/ico_contact.png);
+			width: 48px;
+			height: 38px;
 		}
 	}
 }
-
-
-

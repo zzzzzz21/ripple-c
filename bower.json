@@ -18,7 +18,7 @@
   "dependencies": {
     "modernizr": "2",
     "selectivizr": "*",
-    "jquery": "2.1.1",
+    "jquery": "*",
     "matchHeight": "*",
     "slick-carousel": "*"
   },

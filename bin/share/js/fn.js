@@ -67,30 +67,59 @@ $gNavItem.on('click', function(){
 // -------------------------------------------------
 //	画像入れ替え
 // -------------------------------------------------
-	$(".data-switch").each(function(){
-		var $this = jQuery(this);
-		var PC_IMG_SUFFIX = '_pc';
-		var SP_IMG_SUFFIX = '_sp';
-		var SP_WIDTH = 767;
-		function imgSize(){
-			var windowWidth = jQuery(window).width();
-			if(windowWidth >= SP_WIDTH + 1) {
-				$this.attr('src',$this.attr('src').replace(SP_IMG_SUFFIX,PC_IMG_SUFFIX)).css({visibility:'visible'});
-				} else if(windowWidth < SP_WIDTH + 1) {
-				$this.attr('src',$this.attr('src').replace(PC_IMG_SUFFIX,SP_IMG_SUFFIX)).css({visibility:'visible'});
-			}
+$(".data-switch").each(function(){
+	var $this = jQuery(this);
+	var PC_IMG_SUFFIX = '_pc';
+	var SP_IMG_SUFFIX = '_sp';
+	var SP_WIDTH = 767;
+	function imgSize(){
+		var windowWidth = jQuery(window).width();
+		if(windowWidth >= SP_WIDTH + 1) {
+			$this.attr('src',$this.attr('src').replace(SP_IMG_SUFFIX,PC_IMG_SUFFIX)).css({visibility:'visible'});
+			} else if(windowWidth < SP_WIDTH + 1) {
+			$this.attr('src',$this.attr('src').replace(PC_IMG_SUFFIX,SP_IMG_SUFFIX)).css({visibility:'visible'});
 		}
-		$(window).resize(function(){imgSize();});
-		imgSize();
-	});
+	}
+	$(window).resize(function(){imgSize();});
+	imgSize();
+});
 
 
 // -------------------------------------------------------------------
 // PC表示時にリンク無効化：電話番号リンク
 // -------------------------------------------------------------------
-	$('a.data-link-sp').on('click',function(){
-		if(windowW > break_point_sp) return false;
+$('a.data-link-sp').on('click',function(){
+	if(windowW > break_point_sp) return false;
+});
+
+
+// -------------------------------------------------------------------
+// タブ切り替え
+// -------------------------------------------------------------------
+	var tab__control = $('.tab-control__item'),
+		tab__body = $('.tab-body');
+	if ($('.tab-control__item.is-active').length === 0) $('.tab-control__item:first-child').addClass('is-active');
+	$('.tab-body:gt(0)').addClass('is-hide');
+	$(tab__control).click(function() {
+		var index = $(tab__control).index(this);
+		$(tab__body).removeClass('is-active').addClass('is-hide');
+		$(tab__body).eq(index).removeClass('is-hide').addClass('is-active');
+		$(tab__control).removeClass('is-active')
+		$(this).addClass('is-active')
 	});
 
+
+// -------------------------------------------------------------------
+// アコーディオン
+// -------------------------------------------------------------------
+	$(function() {
+		if ( windowW < break_point_sp) {
+			$('.tab-body__body').hide();
+			$('.tab-body__title')
+				.click(function(e){
+				$(this).toggleClass("is-active").next().slideToggle(300);
+			})			
+		}
+	});
 
 });

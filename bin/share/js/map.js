@@ -8,7 +8,7 @@ function initialize() {
 	};
 	var map = new google.maps.Map(document.getElementById('map-canvas-rin'), myOptions);
 	/*アイコン設定*/
-	var icon = new google.maps.MarkerImage('share/img/ico-rin.png',
+	var icon = new google.maps.MarkerImage('../../share/img/ico-rin.png',
 		new google.maps.Size(80,91),//アイコンサイズ設定
 		new google.maps.Point(0,0)//アイコン位置設定
 	);
@@ -44,7 +44,7 @@ var mapType = new google.maps.StyledMapType(styleOptions, styledMapOptions);
 	};
 	var map = new google.maps.Map(document.getElementById('map-canvas-meguri'), myOptions);
 	/*アイコン設定*/
-	var icon = new google.maps.MarkerImage('share/img/ico-meguri.png',
+	var icon = new google.maps.MarkerImage('../../share/img/ico-meguri.png',
 		new google.maps.Size(80,91),//アイコンサイズ設定
 		new google.maps.Point(0,0)//アイコン位置設定
 	);
@@ -83,7 +83,7 @@ var mapType = new google.maps.StyledMapType(styleOptions, styledMapOptions);
 	};
 	var map = new google.maps.Map(document.getElementById('map-canvas-kokoro'), myOptions);
 	/*アイコン設定*/
-	var icon = new google.maps.MarkerImage('share/img/ico-kokoro.png',
+	var icon = new google.maps.MarkerImage('../../share/img/ico-kokoro.png',
 		new google.maps.Size(80,91),//アイコンサイズ設定
 		new google.maps.Point(0,0)//アイコン位置設定
 	);
@@ -122,7 +122,7 @@ var mapType = new google.maps.StyledMapType(styleOptions, styledMapOptions);
 	};
 	var map = new google.maps.Map(document.getElementById('map-canvas-puente'), myOptions);
 	/*アイコン設定*/
-	var icon = new google.maps.MarkerImage('share/img/ico-puente.png',
+	var icon = new google.maps.MarkerImage('../../share/img/ico-puente.png',
 		new google.maps.Size(80,91),//アイコンサイズ設定
 		new google.maps.Point(0, 0)//アイコン位置設定
 	);
