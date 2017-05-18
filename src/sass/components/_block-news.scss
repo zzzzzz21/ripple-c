@@ -47,6 +47,16 @@
 			width: 100%;
 			padding: $base_padding*4 0;
 		}
+		.xNews.xCatIndex & .tab-body {
+			padding: 0 1em 0 0;
+			height: 400px;
+			overflow-y: scroll;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				height: 30vh;
+			}
+		}
 	}
 	@include element(item) {
 		border-bottom: 1px dotted $base_border_color;
