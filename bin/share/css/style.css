@@ -1057,7 +1057,7 @@ button {
 	position: relative;
 	display: inline-block;
 	box-sizing: border-box;
-	padding: 1em 2em;
+	padding: 1em 2.8em;
 	border: 1px solid #ccc;
 	border-radius: 4px;
 	background: #f39;
@@ -1094,7 +1094,7 @@ button {
 	position: relative;
 	display: inline-block;
 	box-sizing: border-box;
-	padding: 1em 2em;
+	padding: 1em 2.8em;
 	border: 1px solid #ccc;
 	border-radius: 4px;
 	background: #f39;
@@ -1154,7 +1154,7 @@ button {
 	box-sizing: border-box;
 	margin-right: auto;
 	margin-left: auto;
-	padding: 1em 2em;
+	padding: 1em 2.8em;
 	border: 1px solid #ccc;
 	border-radius: 4px;
 	background: #f39;
@@ -1216,7 +1216,7 @@ a.btn-target {
 	position: relative;
 	display: inline-block;
 	box-sizing: border-box;
-	padding: 1em 2em;
+	padding: 1em 2.8em;
 	border: 1px solid #ccc;
 	border-radius: 4px;
 	background: #f39;
